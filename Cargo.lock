@@ -955,6 +955,7 @@ dependencies = [
 [[package]]
 name = "deathframe"
 version = "0.6.0"
+source = "git+https://github.com/Noah2610/deathframe?branch=develop#2a9631a4babf14b69fb74a3ce535e1b40fd9024c"
 dependencies = [
  "deathframe_animation",
  "deathframe_audio",
@@ -965,6 +966,7 @@ dependencies = [
 [[package]]
 name = "deathframe_animation"
 version = "0.1.0"
+source = "git+https://github.com/Noah2610/deathframe?branch=develop#2a9631a4babf14b69fb74a3ce535e1b40fd9024c"
 dependencies = [
  "climer",
  "deathframe_core",
@@ -975,6 +977,7 @@ dependencies = [
 [[package]]
 name = "deathframe_audio"
 version = "0.1.0"
+source = "git+https://github.com/Noah2610/deathframe?branch=develop#2a9631a4babf14b69fb74a3ce535e1b40fd9024c"
 dependencies = [
  "deathframe_core",
  "serde",
@@ -983,6 +986,7 @@ dependencies = [
 [[package]]
 name = "deathframe_core"
 version = "0.1.0"
+source = "git+https://github.com/Noah2610/deathframe?branch=develop#2a9631a4babf14b69fb74a3ce535e1b40fd9024c"
 dependencies = [
  "amethyst",
  "derive_builder",
@@ -992,6 +996,7 @@ dependencies = [
 [[package]]
 name = "deathframe_physics"
 version = "0.1.0"
+source = "git+https://github.com/Noah2610/deathframe?branch=develop#2a9631a4babf14b69fb74a3ce535e1b40fd9024c"
 dependencies = [
  "deathframe_core",
  "derive_builder",
@@ -2977,9 +2982,9 @@ checksum = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
 
 [[package]]
 name = "serde"
-version = "1.0.104"
+version = "1.0.106"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "414115f25f818d7dfccec8ee535d76949ae78584fc4f79a6f45a904bf8ab4449"
+checksum = "36df6ac6412072f67cf767ebbde4133a5b2e88e76dc6187fa7104cd16f783399"
 dependencies = [
  "serde_derive",
 ]
@@ -2995,9 +3000,9 @@ dependencies = [
 
 [[package]]
 name = "serde_derive"
-version = "1.0.104"
+version = "1.0.106"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "128f9e303a5a29922045a830221b8f78ec74a5f544944f3d5984f8ec3895ef64"
+checksum = "9e549e3abf4fb8621bd1609f11dfc9f5e50320802273b12f3811a67e6716ea6c"
 dependencies = [
  "proc-macro2 1.0.10",
  "quote 1.0.3",
