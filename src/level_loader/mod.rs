@@ -11,6 +11,8 @@ use std::fs::File;
 use std::io::Read;
 use std::path::PathBuf;
 
+const ENEMY_DAMAGE: HitPoints = 1;
+
 pub fn load_level<S>(file: S, world: &mut World)
 where
     S: fmt::Display,
@@ -79,7 +81,8 @@ where
                 .with(Collidable::new(CollisionTag::Enemy))
                 .with(hitbox.clone())
                 .with(sprite_render_enemy.clone())
-                .with(Velocity::default()),
+                .with(Velocity::default())
+                .with(DealsDamage::new(ENEMY_DAMAGE)),
         };
 
         let _entity = entity_builder.build();
