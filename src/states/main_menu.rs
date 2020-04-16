@@ -40,6 +40,10 @@ impl<'a, 'b> State<GameData<'a, 'b>, StateEvent> for MainMenu {
         data.data
             .update(data.world, DispatcherId::MainMenu)
             .unwrap();
+
+        let input_manager =
+            data.world.read_resource::<InputManager<MenuBindings>>();
+
         Trans::None
     }
 
@@ -64,6 +68,8 @@ impl<'a, 'b> Menu<GameData<'a, 'b>, StateEvent> for MainMenu {
     ) -> Option<Trans<GameData<'a, 'b>, StateEvent>> {
         if let UiEventType::ClickStop = event.event_type {
             match event_name.as_str() {
+                "btn_start" => Some(Trans::Push(Box::new(Ingame::default()))),
+                "btn_quit" => Some(Trans::Quit),
                 _ => None,
             }
         } else {

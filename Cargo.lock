@@ -964,15 +964,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "deathframe-template"
-version = "0.0.0"
-dependencies = [
- "deathframe",
- "ron",
- "serde",
-]
-
-[[package]]
 name = "deathframe_animation"
 version = "0.0.0"
 source = "git+https://github.com/Noah2610/deathframe?branch=develop#f300980f0669d7d293b9b14a1b1e8aa35ba51d95"
@@ -1020,6 +1011,15 @@ checksum = "707b6a7b384888a70c8d2e8650b3e60170dfc6a67bb4aa67b6dfca57af4bedb4"
 dependencies = [
  "adler32",
  "byteorder",
+]
+
+[[package]]
+name = "demo-top-twin"
+version = "0.0.0"
+dependencies = [
+ "deathframe",
+ "ron",
+ "serde",
 ]
 
 [[package]]

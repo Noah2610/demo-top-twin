@@ -1,4 +1,7 @@
 (
     axes: {},
-    actions: {},
+    actions: {
+        Select: [ [Key(Return)], [Key(Space)], ],
+        Back:   [ [Key(Escape)], [Key(Q)], ],
+    },
 )

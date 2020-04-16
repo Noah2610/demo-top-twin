@@ -8,7 +8,10 @@ pub struct MenuBindings;
 pub enum MenuAxis {}
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
-pub enum MenuAction {}
+pub enum MenuAction {
+    Select,
+    Back,
+}
 
 impl BindingTypes for MenuBindings {
     type Axis = MenuAxis;

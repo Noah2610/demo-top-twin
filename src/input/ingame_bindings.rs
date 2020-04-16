@@ -5,7 +5,12 @@ use std::fmt;
 pub struct IngameBindings;
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
-pub enum IngameAxis {}
+pub enum IngameAxis {
+    PlayerX,
+    PlayerY,
+    ShootX,
+    ShoorY,
+}
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum IngameAction {}
