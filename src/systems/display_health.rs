@@ -1,10 +1,8 @@
 use super::system_prelude::*;
 use crate::resource;
-use amethyst::assets::AssetStorage;
-use amethyst::ui::{Anchor, FontAsset, FontHandle, UiText, UiTransform};
+use amethyst::ui::{UiText, UiTransform};
 use deathframe::amethyst;
 use std::collections::HashMap;
-use std::fmt::Display;
 use std::path::PathBuf;
 
 #[derive(Default)]
