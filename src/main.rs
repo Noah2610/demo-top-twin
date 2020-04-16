@@ -6,6 +6,7 @@ extern crate serde;
 mod components;
 mod init;
 mod input;
+mod level_loader;
 mod resources;
 mod settings;
 mod states;

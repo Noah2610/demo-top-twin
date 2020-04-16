@@ -1,4 +1,10 @@
 #![enable(implicit_some)]
 (
-    speed: (4.0, 4.0),
+    size:      (4.0, 4.0),
+    speed:     (250.0, 250.0),
+    max_speed: (500.0, 500.0),
+    base_friction: (
+        friction_x: 250.0,
+        friction_y: 250.0,
+    ),
 )

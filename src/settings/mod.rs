@@ -1,10 +1,12 @@
 pub mod prelude {
     pub use super::camera_settings::CameraSettings;
+    pub use super::level_settings::LevelSettings;
     pub use super::player_settings::PlayerSettings;
     pub use super::Settings;
 }
 
 mod camera_settings;
+mod level_settings;
 mod player_settings;
 
 use crate::resource;
@@ -17,6 +19,7 @@ use std::fs::File;
 pub struct Settings {
     pub player: PlayerSettings,
     pub camera: CameraSettings,
+    pub level:  LevelSettings,
 }
 
 impl Settings {
@@ -24,6 +27,7 @@ impl Settings {
         Ok(Self {
             player: load_settings("player.ron")?,
             camera: load_settings("camera.ron")?,
+            level:  load_settings("level.ron")?,
         })
     }
 }

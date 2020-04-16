@@ -1,0 +1,4 @@
+#![enable(implicit_some)]
+(
+    tile_size: (4.0, 4.0),
+)
