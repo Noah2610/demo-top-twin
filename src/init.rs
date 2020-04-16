@@ -131,6 +131,12 @@ fn build_game_data<'a, 'b>(
             ControlPlayerSystem::default(),
             "control_player_system",
             &["ingame_input_manager_system"],
+        )?
+        .with(
+            DispatcherId::Ingame,
+            DisplayHealthSystem::default(),
+            "display_health_system",
+            &[],
         )?;
 
     Ok(custom_game_data)

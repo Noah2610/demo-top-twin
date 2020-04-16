@@ -64,6 +64,8 @@ fn init_player(world: &mut World) -> Entity {
         .with(sprite_render)
         .with(ScaleOnce::default())
         .with(player_settings.base_friction)
+        .with(player_settings.health)
+        .with(player_settings.health_display)
         .build()
 }
 

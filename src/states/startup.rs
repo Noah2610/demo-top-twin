@@ -25,4 +25,8 @@ fn insert_resources(world: &mut World) {
     world.insert(sprite_sheet_handles);
 
     world.insert(Settings::load().unwrap());
+
+    let mut font_handles = FontHandles::<PathBuf>::default();
+    font_handles.load(resource("fonts/undefined-medium.ttf"), world);
+    world.insert(font_handles);
 }

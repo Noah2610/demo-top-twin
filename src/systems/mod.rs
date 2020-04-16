@@ -1,5 +1,6 @@
 pub mod prelude {
     pub use super::control_player::ControlPlayerSystem;
+    pub use super::display_health::DisplayHealthSystem;
     pub use deathframe::systems::prelude::*;
 }
 
@@ -13,3 +14,4 @@ mod system_prelude {
 }
 
 mod control_player;
+mod display_health;
