@@ -21,7 +21,7 @@ mod state_prelude {
     pub use super::aliases::*;
     pub use super::prelude::*;
     pub use crate::resource;
-    pub use crate::resources::prelude::DispatcherId;
+    pub use crate::resources::prelude::*;
     pub use crate::settings::prelude::*;
     pub use deathframe::states::state_prelude::*;
 }
