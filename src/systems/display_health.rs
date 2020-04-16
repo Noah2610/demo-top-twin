@@ -9,7 +9,7 @@ use std::path::PathBuf;
 
 #[derive(Default)]
 pub struct DisplayHealthSystem {
-    registered: HashMap<Entity, (Entity, u16)>,
+    registered: HashMap<Entity, (Entity, HitPoints)>,
 }
 
 impl<'a> System<'a> for DisplayHealthSystem {
@@ -63,7 +63,7 @@ impl<'a> System<'a> for DisplayHealthSystem {
                                 new_entity,
                                 UiText::new(
                                     font_handle.clone(),
-                                    health.to_string(),
+                                    health_to_string(health),
                                     health_display.color,
                                     health_display.font_size,
                                 ),
@@ -75,10 +75,14 @@ impl<'a> System<'a> for DisplayHealthSystem {
                 if health.health != *prev_health {
                     if let Some(ui_text) = ui_text_store.get_mut(*health_entity)
                     {
-                        ui_text.text = health.to_string();
+                        ui_text.text = health_to_string(health);
                     }
                 }
             }
         }
     }
+}
+
+fn health_to_string(health: &Health) -> String {
+    format!("{}/{}", health.health, health.max_health)
 }
