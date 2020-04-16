@@ -125,6 +125,12 @@ fn build_game_data<'a, 'b>(
                 "follow_system",
                 "confine_entities_system",
             ],
+        )?
+        .with(
+            DispatcherId::Ingame,
+            ControlPlayerSystem::default(),
+            "control_player_system",
+            &["ingame_input_manager_system"],
         )?;
 
     Ok(custom_game_data)

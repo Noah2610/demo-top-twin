@@ -9,7 +9,7 @@ pub enum IngameAxis {
     PlayerX,
     PlayerY,
     ShootX,
-    ShoorY,
+    ShootY,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]

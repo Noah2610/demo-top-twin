@@ -1,0 +1,5 @@
+#![enable(implicit_some)]
+(
+    size: (200.0, 200.0),
+    z: 10.0,
+)

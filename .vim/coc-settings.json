@@ -1,0 +1,5 @@
+{
+    "rust-client.channel": "nightly-2020-04-12",
+    "rust.features": ["debug"],
+    "rust-client.logToFile": true
+}
