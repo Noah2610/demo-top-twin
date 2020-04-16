@@ -1,0 +1,27 @@
+[package]
+name = "deathframe-template"
+version = "0.0.0"
+authors = []
+edition = "2018"
+
+[dependencies]
+ron = "0.5.1"
+
+[dependencies.deathframe]
+version = "*"
+git = "https://github.com/Noah2610/deathframe"
+branch = "develop"
+features = [
+    "animation",
+    "audio",
+    "physics",
+    "vulkan",
+]
+
+[dependencies.serde]
+version = "1.0.104"
+features = ["derive"]
+
+[features]
+default = []
+debug = ["deathframe/debug"]

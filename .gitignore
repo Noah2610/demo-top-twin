@@ -1,0 +1,11 @@
+# rust
+/target
+
+# logs
+/logs
+*.log
+
+# misc
+_ignore/
+/releases
+/bin/util.sh # Remove this if you want to commit `util.sh`
