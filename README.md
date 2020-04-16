@@ -30,9 +30,11 @@ features/code across projects, which I usually just rewrite for each game.
 `deathframe` is like an `amethyst` _"goodie-bag"_ for me.
 
 ## License
-Distributed under the terms of the [MIT license].
+Distributed under the [Unlicense].  
+Do whatever you want with this template.  
+Consider changing the license after cloning/forking to whatever you wish to use.
 
 [`deathframe`]: https://github.com/Noah2610/deathframe
 [`amethyst`]:   https://github.com/amethyst/amethyst
 [`specs`]:      https://github.com/amethyst/specs
-[MIT license]:  ./LICENSE
+[Unlicense]:   ./UNLICENSE
