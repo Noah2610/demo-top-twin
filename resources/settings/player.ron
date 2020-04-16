@@ -14,10 +14,10 @@
     health_display: (
         offset: (0.0, 0.0),
         z: 2.0,
-        size: (32.0, 16.0),
+        size: (96.0, 32.0),
         color: (1.0, 0.0, 0.0, 1.0),
         font_size: 24.0,
-        anchor: Middle,
-        pivot: Middle,
+        anchor: BottomLeft,
+        pivot: BottomLeft,
     ),
 )
