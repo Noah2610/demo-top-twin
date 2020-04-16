@@ -66,6 +66,7 @@ fn init_player(world: &mut World) -> Entity {
         .with(player_settings.base_friction)
         .with(player_settings.health)
         .with(player_settings.health_display)
+        .with(HealthActionQueue::default())
         .with(TakesDamage::default())
         .build()
 }
