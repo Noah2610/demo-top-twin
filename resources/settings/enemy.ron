@@ -1,4 +1,10 @@
+//! src/settings/enemy_settings.rs
+
 #![enable(implicit_some)]
 (
     damage: 1,
+    health: (
+        health: 2,
+        max_health: 2,
+    ),
 )

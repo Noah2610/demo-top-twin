@@ -31,7 +31,7 @@ impl Settings {
             player: load_settings("player.ron")?,
             camera: load_settings("camera.ron")?,
             level:  load_settings("level.ron")?,
-            enemy:  load_settings("enemy_settings.ron")?,
+            enemy:  load_settings("enemy.ron")?,
         })
     }
 }

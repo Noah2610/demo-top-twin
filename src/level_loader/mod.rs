@@ -88,7 +88,9 @@ where
                 .with(hitbox.clone())
                 .with(sprite_render_enemy.clone())
                 .with(Velocity::default())
-                .with(DealsDamage::new(enemy_settings.damage)),
+                .with(DealsDamage::new(enemy_settings.damage))
+                .with(enemy_settings.health.clone())
+                .with(Lifecycle::default()),
         };
 
         let _entity = entity_builder.build();
