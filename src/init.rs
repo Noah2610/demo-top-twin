@@ -131,6 +131,12 @@ fn build_game_data<'a, 'b>(
             UpdateHealthSystem::default(),
             "update_health_system",
             &[],
+        )?
+        .with(
+            DispatcherId::Ingame,
+            UpdateLifecycleSystem::default(),
+            "update_lifecycle_system",
+            &[],
         )?;
 
     Ok(custom_game_data)
