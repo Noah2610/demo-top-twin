@@ -1,9 +1,12 @@
+mod block;
+
 use crate::components::prelude::*;
 use crate::resource;
 use crate::resources::prelude::*;
 use crate::settings::prelude::*;
 use amethyst::ecs::{World, WorldExt};
 use amethyst::prelude::*;
+use block::prelude::*;
 use deathframe::amethyst;
 use deathframe::core::geo::prelude::*;
 use std::fmt;
@@ -72,11 +75,13 @@ where
 
         entity_builder = match &block.block_type {
             BlockType::Empty => entity_builder,
+
             BlockType::Wall => entity_builder
                 .with(Collidable::new(CollisionTag::Solid))
                 .with(Solid::new(SolidTag::Solid))
                 .with(hitbox.clone())
                 .with(sprite_render_wall.clone()),
+
             BlockType::Enemy => entity_builder
                 .with(Collidable::new(CollisionTag::Enemy))
                 .with(hitbox.clone())
@@ -86,43 +91,5 @@ where
         };
 
         let _entity = entity_builder.build();
-    }
-}
-
-struct Block {
-    block_type: BlockType,
-    pos:        (f32, f32),
-}
-
-enum BlockType {
-    Empty,
-    Wall,
-    Enemy,
-}
-
-impl BlockType {
-    fn z(&self) -> f32 {
-        match self {
-            Self::Empty => 0.0,
-            Self::Wall => 2.0,
-            Self::Enemy => 0.8,
-        }
-    }
-}
-
-impl From<char> for BlockType {
-    fn from(chr: char) -> Self {
-        match chr {
-            '-' => Self::Empty,
-            '#' => Self::Wall,
-            'X' => Self::Enemy,
-            _ => Self::default(),
-        }
-    }
-}
-
-impl Default for BlockType {
-    fn default() -> Self {
-        Self::Empty
     }
 }

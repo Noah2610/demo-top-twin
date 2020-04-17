@@ -1,3 +1,5 @@
+mod init_game_data;
+
 use crate::resource;
 use crate::settings::Settings;
 use crate::states::aliases::GameData;
@@ -6,8 +8,6 @@ use amethyst::core::frame_limiter::FrameRateLimitConfig;
 use amethyst::utils::app_root_dir::application_root_dir;
 use amethyst::ApplicationBuilder;
 use deathframe::amethyst;
-
-mod init_game_data;
 
 pub fn run() -> amethyst::Result<()> {
     start_logger();
