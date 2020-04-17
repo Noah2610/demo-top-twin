@@ -1,47 +1,10 @@
 use crate::resource;
 use crate::resources::prelude::*;
 use crate::settings::Settings;
-use crate::states::aliases::{CustomData, GameData, GameDataBuilder};
-use amethyst::core::frame_limiter::FrameRateLimitConfig;
-use amethyst::utils::app_root_dir::application_root_dir;
+use crate::states::aliases::{CustomData, GameDataBuilder};
 use deathframe::amethyst;
 
-pub fn run() -> amethyst::Result<()> {
-    use crate::states::prelude::Startup;
-    use amethyst::ApplicationBuilder;
-
-    start_logger();
-
-    let settings = Settings::load()?;
-    let game_data = build_game_data(&settings)?;
-
-    let mut game: amethyst::CoreApplication<GameData> =
-        ApplicationBuilder::new(application_root_dir()?, Startup::default())?
-            .with_frame_limit_config(frame_rate_limit_config()?)
-            .with_resource(settings)
-            .build(game_data)?;
-
-    game.run();
-
-    Ok(())
-}
-
-fn start_logger() {
-    use amethyst::{LogLevelFilter, LoggerConfig};
-    amethyst::start_logger(LoggerConfig {
-        level_filter: LogLevelFilter::Error,
-        ..Default::default()
-    });
-}
-
-fn frame_rate_limit_config() -> amethyst::Result<FrameRateLimitConfig> {
-    use std::fs::File;
-    Ok(ron::de::from_reader(File::open(resource(
-        "config/frame_limiter.ron",
-    ))?)?)
-}
-
-fn build_game_data<'a, 'b>(
+pub(super) fn build_game_data<'a, 'b>(
     _settings: &Settings,
 ) -> amethyst::Result<GameDataBuilder<'a, 'b>> {
     use crate::input::prelude::*;
@@ -143,6 +106,12 @@ fn build_game_data<'a, 'b>(
             DisplayHealthSystem::default(),
             "display_health_system",
             &["update_health_system"],
+        )?
+        .with(
+            DispatcherId::Ingame,
+            UpdateLifecycleSystem::default(),
+            "update_lifecycle_system",
+            &[],
         )?;
 
     Ok(custom_game_data)
