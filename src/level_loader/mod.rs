@@ -14,8 +14,6 @@ use std::fs::File;
 use std::io::Read;
 use std::path::PathBuf;
 
-const ENEMY_DAMAGE: HitPoints = 1;
-
 pub fn load_level<S>(file: S, world: &mut World)
 where
     S: fmt::Display,
@@ -25,7 +23,10 @@ where
     let mut level_raw = String::new();
     level_file.read_to_string(&mut level_raw).unwrap();
 
-    let level_settings = world.read_resource::<Settings>().level.clone();
+    let (level_settings, enemy_settings) = {
+        let settings = world.read_resource::<Settings>();
+        (settings.level.clone(), settings.enemy.clone())
+    };
 
     let mut blocks = Vec::new();
 
@@ -87,7 +88,7 @@ where
                 .with(hitbox.clone())
                 .with(sprite_render_enemy.clone())
                 .with(Velocity::default())
-                .with(DealsDamage::new(ENEMY_DAMAGE)),
+                .with(DealsDamage::new(enemy_settings.damage)),
         };
 
         let _entity = entity_builder.build();

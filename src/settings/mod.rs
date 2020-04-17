@@ -1,11 +1,13 @@
 pub mod prelude {
     pub use super::camera_settings::CameraSettings;
+    pub use super::enemy_settings::EnemySettings;
     pub use super::level_settings::LevelSettings;
     pub use super::player_settings::PlayerSettings;
     pub use super::Settings;
 }
 
 mod camera_settings;
+mod enemy_settings;
 mod level_settings;
 mod player_settings;
 
@@ -20,6 +22,7 @@ pub struct Settings {
     pub player: PlayerSettings,
     pub camera: CameraSettings,
     pub level:  LevelSettings,
+    pub enemy:  EnemySettings,
 }
 
 impl Settings {
@@ -28,6 +31,7 @@ impl Settings {
             player: load_settings("player.ron")?,
             camera: load_settings("camera.ron")?,
             level:  load_settings("level.ron")?,
+            enemy:  load_settings("enemy_settings.ron")?,
         })
     }
 }
